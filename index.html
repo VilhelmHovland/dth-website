@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vilhelm's Website</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dthwebsite.css">
+    <title>DTH Website Intellectual History</title>
 </head>
 <body>
-  <h1>Welcome to My Funky Site!</h1>
-  <p>Let’s learn HTML & CSS in style 🎨</p>
-
-  <p><strong>What are keyframes?</strong><br>
-  In CSS, <code>@keyframes</code> are used to define how an animation should change throughout its duration. 
-  You can set styles at specific points (like 0%, 50%, and 100%) to describe how elements move, fade, or transform over time.</p>
-
-  <button
-  onClick="alert('You clicked me!');"
-  >Click Me (just for fun)</button>
+    <header>
+        Intellectual History Website
+    </header>
+    <main>
+        <section>
+            <div id="markdown"></div>
+        </section>
+        <section>
+            <nav>
+                <a href="intellectualhistorypage.html">Digital Technologies in Intellectual History</a>
+                <a href="apipage.html">APIs</a>
+                <a href="githubpage.html">GitHub</a>
+            </nav>
+        </section>
+    </main>
 </body>
 </html>
+
+<script>
+  fetch("designdoc.md")
+    .then(response => response.text())
+    .then(md => {
+      document.getElementById("markdown").innerHTML = marked.parse(md);
+    });
+</script>
