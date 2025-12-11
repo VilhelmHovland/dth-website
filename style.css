@@ -12,35 +12,42 @@ body, h1, h2, h3, p, ul, ol, nav {
 }
 
 header {
-  text-align: center;
-  background-color: #6a0dad;
-  color: white;
-  padding: 2em;
-  margin: 15px;
+    text-align: center;
+    background-color: #6a0dad;
+    color: white;
+    padding: 2em;
+    margin: 15px;
 }
 
 p {
-  margin-top: 1em;
-  margin-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 body {
-  color: #1A1743; 
-  padding: 2em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+    color: #1A1743; 
+    padding: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-nav {
+nav a {
     color: #0f0c38;
     text-align: center;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 header {
-  background-color: #6a0dad;
-  color: white;
-  padding: 20px;
-  text-align: center;
+    background-color: #6a0dad;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 
@@ -59,7 +66,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 button {
