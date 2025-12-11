@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dthwebsite.css">
+    <title>DTH Website Github</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="intellectualhistorypage.html">Digital Technologies in Intellectual History</a>
+            <a href="apipage.html">APIs</a>
+            <a href="githubpage.html">GitHub</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div id="markdown"></div>
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+  fetch("githubpage.md")
+    .then(response => response.text())
+    .then(md => {
+      document.getElementById("markdown").innerHTML = marked.parse(md);
+    });
+</script>
