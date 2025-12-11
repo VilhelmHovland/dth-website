@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dthwebsite.css">
+    <title>DTH Website APIs</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="intellectualhistorypage.html">Digital Technologies in Intellectual History</a>
+            <a href="apipage.html">APIs</a>
+            <a href="githubpage.html">GitHub</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div id="markdown"></div>
+        </section>
+        <section>
+          <input type="text" id="searchTerm" placeholder="Enter query term">
+          <button id="searchBtn">Search</button>
+          
+          <div id="results"></div>
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+  fetch("githubpage.md")
+    .then(response => response.text())
+    .then(md => {
+      document.getElementById("markdown").innerHTML = marked.parse(md);
+    });
+</script>
+
+<script>
+document.getElementById("searchBtn").addEventListener("click", function () {
+    
+    const query = document.getElementById("searchTerm").value.trim();
+    if (!query) {
+        alert("Please enter a search term.");
+        return;
+    }
+
+    const url = `https://api.kb.dk/data/rest/api/text?q=${encodeURIComponent(query)}&sort=position_ssi asc&rows=1&start=0&wt=json&indent=on`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const docs = data.response.docs;
+
+            if (!docs || docs.length === 0) {
+                document.getElementById("results").innerHTML = "<p>No results found.</p>";
+                return;
+            }
+
+            const doc = docs[0];
+
+            const title = doc.sort_title_ssi || "No title available";
+            const author = doc.author_name_ssi || "No author available";
+            const text = (doc.text_tsim && doc.text_tsim[0]) || "No text available";
+
+            document.getElementById("results").innerHTML = `
+                <h3>Result:</h3>
+                <ol>
+                    <li><strong>Title:</strong> ${title}</li>
+                    <li><strong>Author:</strong> ${author}</li>
+                    <li><strong>Text:</strong> ${text}</li>
+                </ol>
+            `;
+        })
+});
+</script>
