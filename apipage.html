@@ -22,6 +22,7 @@
             <div id="markdown"></div>
         </section>
         <section>
+            getEuropeana();
           <div id="europeanaAPI"></div>
         </section>
     </main>
@@ -41,7 +42,8 @@
         const data = await response.json();
         const image = data.items[0].edmPreview[0]
         document.getElementById("europeanaAPI").innerHTML = `
-              <img src="${image}" alt="API Image" style="max-width: 300px;">
+          <img src="${image}" alt="Europeana item" style="max-width: 300px;">
+        `;
     }
 </script>
 
