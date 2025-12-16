@@ -1,6 +1,4 @@
-# Digital Technologies in the Humanities Assignment 1
-
-# Intellectual History
+## Digital Technologies in Intellectual History
 
 In this text I will be discussing the role of digital technologies in the field of intellectual history. Intellectual history is a historical field concerned with the entirety of human intellectual practices, thoughts and ideas, and their historical contexts and interrelationships. This is not limited to just historical intellectuals like philosophers and other scholars, but can concern itself with popular thought and general intellectual practices. The field is characterized less by its research object, as it is extremely broad, and more by the methodological approach, characterized by contextualization, both synchronically and diachronically in history. The sources for research can be any kind of intellectual artifact, but the foremost kind is that of historical text.
 
