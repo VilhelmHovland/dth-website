@@ -8,3 +8,6 @@ My field largely concerns itself with analysis of historical text. For "distant 
 
 [Click here to link to the repository](https://github.com/tesseract-ocr/tesseract)
 
+### References
+
+Smith, Ray, et al. “Tesseract OCR.” GitHub Repository. Accessed December 16, 2025. https://github.com/tesseract-ocr/tesseract.
